@@ -1,0 +1,101 @@
+<html>
+<head>
+    <script src="angular-min-js.js"></script>
+    <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+    <script src="table.js"></script>
+    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css">
+    <link rel="stylesheet" href="table.css">
+    <style type="text/css">
+
+      .myGrid {
+      
+      width: 500px;
+      
+      height: 200px;
+      
+      }
+      
+      </style>
+    <script type="text/javascript">
+
+      var app = angular.module("uigridApp", ["ui.grid"]);
+      
+      app.controller("uigridCtrl", function ($scope) {
+      
+      $scope.users = [
+      
+      { name: "Madhav Sai", age: 10, location: 'Nagpur' },
+      
+      { name: "Suresh Dasari", age: 30, location: 'Chennai' },
+      
+      { name: "Rohini Alavala", age: 29, location: 'Chennai' },
+      
+      { name: "Praveen Kumar", age: 25, location: 'Bangalore' },
+      
+      { name: "Sateesh Chandra", age: 27, location: 'Vizag' }
+      
+      ];
+      
+      });
+      
+      </script>
+
+    </head>
+        
+<!-- </head>
+  <body ng-app='myApp'  ng-controller="testController">
+
+    <form >
+      <input type="text" id="name" ng-model="name1"  />
+      <button ng-click="myFunction()">Submit</button>
+    </form>
+      <br><br> -->
+    <!-- <body ng-app="uigridApp">     
+       <div ui-grid="{data:users}" class="uigrid"></div>
+      </body> -->
+      
+<body ng-app="uigridApp">
+
+  <h2>AngularJS UI Grid Example</h2>
+  
+  <div ng-controller="uigridCtrl">
+  
+  <div ui-grid="{ data: users }" class="myGrid"></div>
+  
+  </div>
+  
+  </body>
+
+        
+      <!-- <table>
+        <thead>
+          <tr>
+            <th ng-click="sortData('key')">
+                City<div ng-class="getSortClass('key')"></div>
+
+            </th>
+            <th ng-click="sortData('Count')">
+                Count<div ng-class="getSortClass('Count')"></div>
+
+            </th> 
+            <th>City</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tr>
+        <div ui-grid="gridoptions" class="uigrid" >  
+         <tr ng-repeat="item in output|orderBy:sortColumn:reverseSort" ui-grid="vm.gridOptions" class="uigrid" >
+          <td>{{item.key}} </td>
+          <td>{{item.Count}}</td>
+          </tr>
+        </table> 
+
+    </div>
+  </tr>
+</table> -->
+
+
+        
+        
+    </body>
+</html>
