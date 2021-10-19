@@ -15,6 +15,7 @@ app.controller(
     var temp = [];
     var timestring = "";
     var totalTime;
+    var x = [];
 
     var date1;
     var date2;
@@ -180,12 +181,14 @@ app.controller(
 
       finalTime = formatTime(secunds); // FORMAT TIME
       console.log(finalTime);
+      x.push(finalTime);
 
       console.log(finalTime, "ok");
-      return finalTime;
     };
-    console.log(successCallBack, "ftyfyf");
-    totalTime = finalTime;
+
+    $scope.op = function () {
+      return x[0];
+    };
 
     //<==================================== ERROR CALL BACK=======================>
 
@@ -214,7 +217,8 @@ app.controller(
         {
           name: "Duration",
           field: "duration",
-          aggregationType: uiGridConstants.aggregationTypes.max,
+          footerCellTemplate:
+            '<div class="ui-grid-cell-contents" >Total:{{grid.appScope.op()}}  </div>',
         },
         { name: "Run Mode", field: "run_mode" },
         { name: "Status", field: "Status" },
